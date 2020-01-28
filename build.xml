@@ -3,7 +3,7 @@
 
 <project name="Maud" default="copy_full" basedir=".">
 
-    <property file="${user.home}/.ant_maud_v2.properties"/>
+    <property file=".ant_maud.properties"/>
     <property name="dropbox" location="${user.home}/Dropbox/Maud"/>
     <property name="src" location="src"/>
     <property name="web" location="src/web"/>
@@ -302,7 +302,7 @@
         <copy file="${src}/it/unitn/ing/wizard/finishIcon.gif" todir="${build_ant}/it/unitn/ing/wizard"/>
         <copy file="${src}/it/unitn/ing/wizard/nextIcon.gif" todir="${build_ant}/it/unitn/ing/wizard"/>
         <!-- Build Maud.jar. -->
-        <jar jarfile="${build}/Maud_dev.jar" basedir="${build_ant}">
+        <jar jarfile="${build}/Maud.jar" basedir="${build_ant}">
             <!--exclude name="it/unitn/ing/rista/diffr/cal/AngularInclinedFlatImageCalibration.class" />
       <exclude name="it/unitn/ing/rista/diffr/geometry/GeometryInclinedImage.class" /-->
             <manifest>
@@ -310,7 +310,6 @@
                 <attribute name="Main-class" value="com.radiographema.Maud"/>
             </manifest>
         </jar>
-        <copy file="${build}/Maud_dev.jar" tofile="${build}/Maud.jar"/>
     </target>
 
     <target name="jar_nova_classes" depends="compile_full" description="Build Maud.jar.">

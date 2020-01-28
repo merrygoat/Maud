@@ -6,7 +6,6 @@ import java.util.Vector;
 import javax.jmdns.JmDNS;
 import javax.jmdns.ServiceInfo;
 
-import jnt.scimark2.Benchmark;
 
 public class XGridAgent {
 
@@ -118,7 +117,7 @@ public class XGridAgent {
       //never reached
     }
     if (power == -1)
-      power = computePower();
+      power = 100000;
     if (name == null)
       name = loadName();
     if (pathForCookie.length() > 0 && !pathForCookie.endsWith(File.separator))
@@ -254,13 +253,6 @@ public class XGridAgent {
         e.printStackTrace();
       }
     }
-  }
-
-  public static long computePower() {
-    System.out.println("Please wait for benchmark computing and speed estimation (about 15 secs)");
-    Benchmark benchmark = new Benchmark();
-    double score = benchmark.run();
-    return (long) (12.65 * score); // normalized on G4 MHz
   }
 
   public static void setControllerHost(String controller) {

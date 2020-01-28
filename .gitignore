@@ -1,0 +1,9 @@
+/.idea/
+/bin
+/build/build.ant/
+/build/Maud.jar
+/build_numbers/Maud_full_build.number
+/Maud/lib/Maud.jar
+/build
+/Maud.iws
+/src/Maud1.iml
